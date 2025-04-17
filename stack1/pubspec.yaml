@@ -23,3 +23,5 @@ flutter:
   # Tambahkan konfigurasi assets untuk folder images
   assets:
     - images/dyah.jpg
+    - images/login.jpg
+    

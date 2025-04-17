@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'daftar_teman_layar.dart';
-import 'profil_layar.dart';
-import 'login_layar.dart';
+import 'halaman_login.dart';
+import 'daftar_teman.dart';
+import 'halaman_profil.dart';
 
 void main() {
-  runApp(const MyApp()); 
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,13 +13,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Aplikasi Flutter',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginLayar(), 
+      debugShowCheckedModeBanner: false,
+      title: 'My App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const HalamanLogin(),
+
       routes: {
-        '/login': (context) => const LoginLayar(),
-        '/profil': (context) => const ProfilLayar(),
-        '/daftarTeman': (context) => DaftarTemanLayar(), 
+        '/profil': (context) {
+          final args =
+              ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+          return HalamanProfil(email: args['email']!);
+        },
+        '/teman': (context) {
+          final args =
+              ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+          return DaftarTeman(email: args['email']!);
+        },
       },
     );
   }
