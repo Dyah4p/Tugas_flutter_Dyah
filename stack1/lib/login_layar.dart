@@ -14,7 +14,6 @@ class LoginLayar extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-           
             TextFormField(
               decoration: const InputDecoration(
                 labelText: 'Email',
@@ -22,9 +21,8 @@ class LoginLayar extends StatelessWidget {
                 prefixIcon: Icon(Icons.email),
               ),
             ),
-            const SizedBox(height: 16), 
+            const SizedBox(height: 16),
 
-            
             TextFormField(
               obscureText: true,
               decoration: const InputDecoration(
@@ -33,13 +31,31 @@ class LoginLayar extends StatelessWidget {
                 prefixIcon: Icon(Icons.lock),
               ),
             ),
-            const SizedBox(height: 20), 
+            const SizedBox(height: 20),
+
+            
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                TextButton(
+                  onPressed: () {
+                   
+                  },
+                  child: const Text('Lupa Password?'),
+                ),
+                TextButton(
+                  onPressed: () {
+                    
+                  },
+                  child: const Text('Daftar'),
+                ),
+              ],
+            ),
 
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
-      
                   Navigator.pushNamed(context, '/daftarTeman');
                 },
                 child: const Text('Login'),
