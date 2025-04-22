@@ -4,10 +4,7 @@ import 'daftar_teman.dart';
 class HalamanProfil extends StatelessWidget {
   final String email;
 
-  const HalamanProfil({
-    super.key,
-    required this.email,
-  });
+  const HalamanProfil({super.key, required this.email});
 
   @override
   Widget build(BuildContext context) {
@@ -83,10 +80,14 @@ class HalamanProfil extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: SizedBox(
               width: double.infinity,
-              child: ElevatedButton.icon(
-                icon: const Icon(Icons.people_alt),
-                label: const Text('Lihat Daftar Teman'),
-                style: ElevatedButton.styleFrom(
+              child: TextButton.icon(
+                icon: const Icon(Icons.people_alt, color: Colors.white),
+                label: const Text(
+                  'Lihat Daftar Teman',
+                  style: TextStyle(color: Colors.white),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
                   padding: const EdgeInsets.symmetric(vertical: 16),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),

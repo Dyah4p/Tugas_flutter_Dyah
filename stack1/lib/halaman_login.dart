@@ -17,7 +17,7 @@ class _HalamanLoginState extends State<HalamanLogin> {
       context,
       MaterialPageRoute(
         builder: (context) => HalamanProfil(
-          email: emailController.text, // Hanya mengirim email
+          email: emailController.text, 
         ),
       ),
     );
@@ -66,9 +66,22 @@ class _HalamanLoginState extends State<HalamanLogin> {
               ),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
+
+            
+            TextButton(
               onPressed: handleLogin,
-              child: const Text('Login'),
+              style: TextButton.styleFrom(
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                backgroundColor: Colors.blue, 
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+              child: const Text(
+                'Login',
+                style: TextStyle(fontSize: 16),
+              ),
             ),
           ],
         ),
